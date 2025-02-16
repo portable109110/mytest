@@ -8,6 +8,18 @@
 <body>
     <h1>Welcome!</h1>
     <p>You have successfully logged in.</p>
-    <img src="https://www.clarin.com/2020/03/18/mj75Dc7Vj_1200x0__1.jpg" alt="Test Image" width="300">
+    <img id="displayImage" src="" alt="Selected Image" width="300">
+
+    <script>
+        // Retrieve the selected image URL from localStorage
+        const selectedImage = localStorage.getItem('selectedImage');
+
+        // Display the selected image
+        if (selectedImage) {
+            document.getElementById('displayImage').src = selectedImage;
+        } else {
+            document.getElementById('displayImage').src = 'default-image.jpg'; // Default image if no selection
+        }
+    </script>
 </body>
 </html>
